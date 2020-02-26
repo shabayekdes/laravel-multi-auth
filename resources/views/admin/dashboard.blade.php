@@ -3,7 +3,7 @@
 
 @section('content')
  <div class="container">
-     Admin dashboard <a href="#">Regisetr</a>
+     Admin dashboard <a href="#">Register</a>
      <a href="#">Logout</a>
  </div>
 @endsection

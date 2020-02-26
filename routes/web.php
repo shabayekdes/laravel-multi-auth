@@ -20,5 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('admin/login','Admin\Auth\LoginController@showAdminLoginForm')->name('show.admin.login');
+Route::post('admin/login','Admin\Auth\LoginController@login')->name('admin.login');
 
-
+Route::group(['middleware'=>'auth:admin'],function (){
+    Route::get('admin/dashboard','Admin\HomeController@dashboard')->name('admin.dashboard');
+});
