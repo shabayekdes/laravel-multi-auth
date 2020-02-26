@@ -24,4 +24,6 @@ Route::post('admin/login','Admin\Auth\LoginController@login')->name('admin.login
 
 Route::group(['middleware'=>'auth:admin'],function (){
     Route::get('admin/dashboard','Admin\HomeController@dashboard')->name('admin.dashboard');
+    Route::get('admin/register','Admin\HomeController@showAdminRegistrationForm')->name('show.admin.register');
+    Route::post('admin/register','Admin\HomeController@adminRegister')->name('admin.register');
 });
